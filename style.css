@@ -1,0 +1,165 @@
+/*all page general styles*/
+
+* { box-sizing: border-box; }
+
+body {
+  color: #9c9c9c;
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+.c-white { color: #fff; }
+
+.bg-lightgrey { background-color: #f4f4f4; }
+
+.bg-white { background-color: #fff; }
+
+.bg-black { background-color: #000; }
+
+h1,
+h2 {
+  margin-top: 0;
+  font-family: fantasy;
+}
+
+h2 {
+  font-size: 32px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #444;
+}
+
+p {
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 0;
+  letter-spacing: 2px;
+}
+
+.inner {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  background-color: transparent;
+  border: 2px solid #444;
+  border-radius: 4px;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 15px 50px;
+  font-size: 10px;
+  transition: all .3s ease-out;
+}
+
+button:hover {
+  border-color: #ef6480;
+  color: #ef6480;
+}
+
+/*___________________________________________*/
+/*first wrapper styles*/
+
+.first-wrapper { padding: 150px 0; }
+
+.first-wrapper .inner { width: 45%; }
+
+.first-wrapper h1 {
+  font-size: 70px;
+  border-bottom: 2px solid white;
+  padding-bottom: 30px;
+}
+
+/* !! */
+/*second wrapper styles*/
+
+.second-wrapper { padding: 80px 0; }
+
+.second-wrapper .inner {
+  padding: 80px 0;
+  border-radius: 4px;
+}
+
+.second-wrapper .icon {
+  font-size: 40px;
+  padding: 20px;
+  /*width: 80px;
+  height: 80px;
+  line-height: 80px;*/
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.second-wrapper p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 30px;
+}
+
+.second-wrapper .content-box {
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* !! */
+/*third wrapper styles*/
+
+.third-wrapper { padding: 80px 0; }
+
+.third-wrapper .content-box {
+  border: 2px solid black;
+  padding: 50px 0;
+  border-radius: 4px;
+}
+
+.third-wrapper .social { margin-top: 30px; }
+
+.third-wrapper a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 30px;
+  color: #444;
+  margin-right: 15px;
+  transition: color .3s ease-out;
+}
+
+.third-wrapper a:hover { color: #ef6480; }
+
+/* !! */
+/*footer styles*/
+
+.footer { padding: 150px 0; }
+
+.footer p { margin-bottom: 30px; }
+
+.footer form {
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 4px;
+  padding: 30px 20px;
+  text-align: left;
+}
+
+.footer form .form-row { margin-bottom: 20px; }
+
+.footer form label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.footer form input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #d9d9d9;
+}
+
+.footer button { width: 100%; }
