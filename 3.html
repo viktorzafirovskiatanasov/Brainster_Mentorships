@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#actions {
+			background-color: skyblue;
+			width: 400px;
+			height: 100px;
+
+		}
+	</style>
+</head>
+<body>
+
+	<div id="actions">
+		<h2>Font size</h2>
+		<input type="button" id="initial" value="Initial">
+		<input type="button" id="increase" value="Increase">
+		<input type="button" id="decrease" value="Decrease">
+	</div>
+
+	<p>
+		By clicking the "Increase" button, the text font should increase by a factor of (eg X1.2). Analogously, by
+		clicking the "Decrease" button you should reduce the font by a certain factor(ex 1.2). The reduction should also
+		be animated. By clicking the “Initial” button set the font size to default starting value.
+	</p>
+
+	<p>
+		By clicking the "Increase" button, the text font should increase by a factor of (eg X1.2). Analogously, by
+		clicking the "Decrease" button you should reduce the font by a certain factor(ex 1.2). The reduction should also
+		be animated. By clicking the “Initial” button set the font size to default starting value.
+	</p>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+		$(document).ready(function () {
+			let initialFontSize = currentFontSize() // 16
+
+			$("#initial").click(function () {
+				$('p').animate({
+					fontSize: `${initialFontSize}px`
+				}, 500)
+			});
+
+			$("#increase").click(function () {
+				console.log(initialFontSize , currentFontSize())
+				$('p').animate({
+					fontSize: `${currentFontSize() * 1.2}px`
+				}, 500)
+			});
+
+			$("#decrease").click(function () {
+				$('p').animate({
+					fontSize: `${currentFontSize() / 1.2}px`
+				}, 500)
+			});
+
+		});
+
+		function currentFontSize(){
+			return $("p").css('font-size').replace('px', '') // 16px -> 16
+		}
+
+	</script>
+</body>
+
+</html>

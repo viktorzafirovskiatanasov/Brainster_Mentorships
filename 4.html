@@ -1,0 +1,68 @@
+<html>
+
+<head>
+	<title></title>
+</head>
+
+
+<style>
+
+</style>
+
+<body>
+	<input type="text" placeholder="" id="userInput">
+
+	<p>
+		Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+	</p>
+	<p>
+		Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and
+		the like)
+	</p>
+	<p>
+		It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+		its layout.
+	</p>
+	<p>
+		There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+		some form, by injected humour, or randomised words which don't look even slightly believable.
+	</p>
+	<p>
+		There are many variations of passages of Lorem Ipsum available, but the majority have suffered.
+	</p>
+	<p>
+		Alteration in
+		some form, by injected humour, or randomised words which don't look even slightly believable.
+	</p>
+	<p>
+		Alteration in
+		some form, by injected humour, or randomised words which don't look even slightly believable.
+	</p>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+	<script>
+
+		function randomRBG() {
+			return Math.floor(Math.random() * 255);
+		}
+
+		$(document).ready(function () {
+
+
+			$("#userInput").keyup(function () {
+				console.log(randomRBG() , randomRBG() , randomRBG())
+				let userInput = $(this).val()
+
+				if (userInput.length >= 2 && userInput.length <= 9) {
+					$('body').css("background-color", `rgb(${randomRBG()}, ${randomRBG()}, ${randomRBG()}`)
+				};
+
+				$("p:nth-child(even)").css("background-color", "grey")
+
+			});
+		});
+	</script>
+</body>
+
+</html>

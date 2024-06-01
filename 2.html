@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title></title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<p>click the box</p>
+<div id="element" class="element" style="height: 60px; width: 300px; background-color: blue; position: absolute;">
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script>
+    $(document).ready(function () {
+
+        let width = $(document).width()
+        let height = $(document).height()
+        let elementWidth = $("#element").width()
+        let elementHeight = $("#element").height()
+        let newLeft = width / 2 - elementWidth / 2
+        let newTop = 0
+
+        $("#element").offset({
+            left: newLeft,
+            top: newTop
+        })
+
+        $("#element").click(function () {
+
+            // $(this).animate({ //1
+            //     left: width - elementWidth,
+            //     top: height / 2 - elementHeight / 2
+            // }, {
+            //     duration: 500,
+            //     complete: function () {
+            //         $(this).animate({
+            //             left: newLeft,
+            //             top: height - elementHeight
+            //         }, {
+            //             duration: 500,
+            //             complete: function () {
+            //                 $(this).animate({
+            //                     left: 0,
+            //                     top: height / 2 - elementHeight / 2
+            //                 })
+            //             }
+            //         })
+            //     }
+            //
+            // })
+
+                $(this).animate({ //1
+                    left: width - elementWidth,
+                    top: height / 2 - elementHeight / 2
+                }, 500, function () { //2
+                    $(this).animate({
+                        left: newLeft,
+                        top: height - elementHeight
+                    }, 500, function () { //3
+                        $(this).animate({
+                            left: 0,
+                            top: height / 2 - elementHeight / 2
+                        }, 500, function () { //4
+                            $(this).animate({
+                                left: newLeft,
+                                top: newTop
+                            })
+                        })
+                    })
+                })
+        })
+    })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .buttons {
+            width: 150px;
+
+        }
+
+        .buttons:hover {
+            background-color: aqua;
+        }
+
+        .border {
+            border: 1px solid black;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<div style="margin-left: 20px; background-color: yellow; width: 500px" class="border">
+    <h3><i>Custom tab</i></h3>
+    <div id="buttons" style="margin-left: 10px; margin-bottom: 10px">
+        <input style="text-align: left" type="button" value="Tab 1" class="buttons" data-id="1">
+        <input style="text-align: left" type="button" value="Tab 2" class="buttons" data-id="2">
+        <input style="text-align: left" type="button" value="Tab 3" class="buttons" data-id="3">
+    </div>
+
+    <br>
+
+    <div class="border" style="background-color: skyblue;width: 500px;" id="">
+        <p id="1" style="width: 490px; margin: auto">Lorem Ipsum is simply dummy text of the printing and
+            typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+            survived not only five centuries, but also the leap into electronic typesetting, remaining
+            essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+            containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.</p>
+        <p id="2"  style="width: 490px; margin: auto">It is a long established fact that a reader will be
+            distracted by the readable content of a page when looking at its layout. The point of using Lorem
+            Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
+            here, content here', making it look like readable English.</p>
+        <p id="3"  style="width: 490px; margin: auto">There are many variations of passages of Lorem Ipsum
+            available, but the majority have suffered alteration in some form, by injected humour, or randomised
+            words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum,
+            you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script>
+
+    $('p').hide()
+    $(document).ready(function () {
+
+
+        $('.buttons').on('click', function ()  {
+
+            let id = $(this).data('id') // this.dataset.id
+
+
+            // $('p')   // document.getElementsByTagName()
+            //
+            // $('#3') ;//document.getElementById()
+            //
+            // $('.class'); // document.getElementsByClassName()
+
+            // document.querySelectorAll('#id');
+            // document.querySelector('.class');
+            if ($(`#${id}`).is(':hidden')) // true
+            {
+                $('p').hide()
+                // $(`#${id}`).toggle('display')
+                $(`#${id}`).show()
+            }
+        })
+
+    })
+</script>
+</body>
+
+</html>
