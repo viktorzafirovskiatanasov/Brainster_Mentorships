@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.9375rem;
+  font-weight: 600;
+}
+
+html {
+  font-size: 16px;
+}
+
+h2 {
+  color: #fff;
+}
+
+h3 {
+  color: #fff;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 3.125rem;
+  color: #e65f78;
+}
+
+h2, h3 {
+  text-transform: capitalize;
+  color: #fff;
+}
+
+p {
+  color: #a0a0ac;
+}
+
+.btn {
+  padding: 0.9375rem 1.875rem;
+  border: 1px solid #fff;
+  border-radius: 1.875rem;
+  text-transform: uppercase;
+  margin-top: 1.875rem;
+  display: inline-block;
+}
+
+a {
+  color: #a0a0ac;
+}
+a:hover {
+  color: #e65f78;
+}
+
+span {
+  color: #e65f78;
+}
+
+footer, .blog-section, .blog-section .inner .wrapper, .about-me-section .wrap {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+@media (max-width: 768px) {
+  footer, .blog-section, .blog-section .inner .wrapper, .about-me-section .wrap {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+}
+
+.blog-section .inner .wrapper, .about-me-section .wrap, header nav .wrapper, header .hero {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 768px) {
+  .blog-section .inner .wrapper, .about-me-section .wrap, header nav .wrapper, header .hero {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 768px) {
+  .blog-section .inner .wrapper, .about-me-section .wrap, header nav .wrapper, header .hero {
+    width: 90%;
+  }
+}
+
+footer, .blog-section, .blog-section .inner .wrapper, .about-me-section .wrap .about-container, .about-me-section .wrap .socials .circle-socials {
+  display: flex;
+}
+@media (max-width: 768px) {
+  footer, .blog-section, .blog-section .inner .wrapper, .about-me-section .wrap .about-container, .about-me-section .wrap .socials .circle-socials {
+    flex-direction: column;
+  }
+}
+@media (max-width: 425px) {
+  footer, .blog-section, .blog-section .inner .wrapper, .about-me-section .wrap .about-container, .about-me-section .wrap .socials .circle-socials {
+    flex-direction: column;
+  }
+}
+
+header {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/header-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+header nav {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+header nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+header nav .wrapper .none {
+  display: none;
+}
+header nav .wrapper ul {
+  align-items: center;
+  display: flex;
+}
+header nav .wrapper ul li:first-child a {
+  color: #e65f78;
+}
+header nav .wrapper ul li {
+  text-transform: capitalize;
+  list-style-type: none;
+}
+header nav .wrapper ul :not(:last-child) {
+  margin-right: 0.9375rem;
+}
+header nav .wrapper img, header nav .wrapper i {
+  height: 1.5625rem;
+}
+@media (max-width: 768px) {
+  header nav {
+    background-color: #fff;
+  }
+  header nav .wrapper .none {
+    display: block;
+    align-items: center;
+  }
+  header nav .wrapper ul {
+    display: none;
+  }
+  header nav .wrapper .block {
+    display: none;
+  }
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+}
+header .hero {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
+}
+header i {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  background-color: #e65f78;
+  color: #fff;
+  padding: 0.625rem;
+}
+
+.about-me-section {
+  background-color: #2e3135;
+}
+.about-me-section .wrap .about-container {
+  gap: 1.875rem;
+  background-color: #2e3135;
+}
+.about-me-section .wrap .about-container .about-img {
+  border: 6px solid black;
+  border-radius: 0.3125rem;
+}
+.about-me-section .wrap .about-container .about-img img {
+  height: 100%;
+}
+.about-me-section .wrap .about-text p {
+  padding-bottom: 0.9375rem;
+}
+.about-me-section .wrap .socials {
+  display: flex;
+}
+.about-me-section .wrap .socials .circle-socials {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  border: 1px solid #a0a0ac;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.9375rem;
+}
+
+.blog-section {
+  background-color: #26282b;
+}
+.blog-section .inner .title {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.blog-section .inner .title h2 {
+  margin: 0.9375rem 0;
+}
+@media (max-width: 768px) {
+  .blog-section .inner .title {
+    width: 80%;
+  }
+}
+@media (max-width: 425px) {
+  .blog-section .inner .title {
+    width: 95%;
+  }
+  .blog-section .inner .title h2 {
+    font-size: 2.1875rem;
+  }
+}
+.blog-section .inner p {
+  padding: 0.625rem 0;
+  color: #a0a0ac;
+}
+.blog-section .inner .wrapper .box {
+  flex-basis: 33.33%;
+  background-color: #2e3135;
+  padding: 8px;
+  border-radius: 3px;
+}
+.blog-section .inner .wrapper .box:not(:last-child) {
+  margin-right: 20px;
+}
+.blog-section .inner .wrapper .box .img-box img {
+  border-radius: 3px;
+}
+.blog-section .inner .wrapper .box h3 {
+  margin: 0.625rem 0;
+  font-size: 1.5625rem;
+}
+.blog-section .inner .wrapper .box a {
+  text-decoration: none;
+  color: #a0a0ac;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+@media (max-width: 768px) {
+  .blog-section .inner .wrapper .box:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .blog-section .inner .wrapper {
+    flex-direction: column;
+  }
+}
+
+footer {
+  background-color: #2e3135;
+  justify-content: center;
+  text-align: center;
+}
+footer .inner p {
+  padding-top: 0.9375rem;
+}
+footer .inner a {
+  text-decoration: none;
+}
+footer .inner a i {
+  background-color: #464646;
+  padding: 0.9375rem;
+  border-radius: 50%;
+  width: 50px;
+}
+footer .inner a:not(:last-child) {
+  margin-right: 10px;
+}/*# sourceMappingURL=main.css.map */

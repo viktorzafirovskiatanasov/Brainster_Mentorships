@@ -1,0 +1,74 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+@use "sass:math";
+
+.blog-section {
+  @extend %flex;
+  @extend %section;
+  background-color: var.$background-color-secondary;
+  .inner {
+    .title {
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      h2 {
+        margin: math.div(var.$gutter-base, 2) 0;
+      }
+      @include mix.tablet-styles {
+        width: 80%;
+      }
+      @include mix.mobile-l-styles {
+        width: 95%;
+        h2{
+          font-size: var.$heading-size-medium;
+        }
+      }
+    }
+    p {
+      padding: math.div(var.$gutter-base, 3) 0;
+      color: var.$text-color-base;
+    }
+    .wrapper {
+      @extend %wrap;
+      @extend %flex;
+      @extend %section;
+      .box {
+        flex-basis: 33.33%;
+        background-color: var.$background-color-primary;
+        padding: 8px;
+        border-radius: 3px;
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+        .img-box {
+          img {
+            border-radius: 3px;
+          }
+        }
+        h3 {
+          margin: math.div(var.$gutter-base, 3) 0;
+          font-size: var.$heading-size-tiny;
+        }
+        
+        a {
+          text-decoration: none;
+          color: var.$text-color-base;
+          font-weight: var.$font-weight-bold;
+          
+          margin-bottom: math.div(var.$gutter-base, 3);
+        }
+        @include mix.tablet-styles {
+          &:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 20px;
+          }
+        }
+      }
+      @include mix.tablet-styles {
+        flex-direction: column;
+      }
+
+    }
+  }
+}

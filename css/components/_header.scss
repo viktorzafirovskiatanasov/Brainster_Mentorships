@@ -1,0 +1,90 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+@use "sass:math";
+
+header{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.60), rgba(0, 0, 0, 0.60)), url("../images/header-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    
+    nav{
+        padding-top: math.div(var.$gutter-base,3) ;
+        padding-bottom: math.div(var.$gutter-base,3) ;
+        .wrapper
+        {
+            @extend %wrap;
+        display: flex;
+        justify-content: space-between;
+        .none{
+            display: none;
+        }
+        ul{
+            li:first-child a{
+                color: #e65f78;
+            }
+            align-items: center;
+            display: flex;
+            li{
+            text-transform: capitalize;
+            list-style-type: none;
+           
+            }
+            :not(:last-child){
+                margin-right: math.div(var.$gutter-base,2);
+            }
+        }
+        img , i{
+            height: var.$heading-size-tiny;
+        }
+    }
+    @include mix.tablet-styles{
+    
+        background-color: var.$text-color-primary;
+    
+    .wrapper{
+        .none{
+            display: block;
+            align-items: center;
+        }
+        ul{
+            display: none;
+          }
+          .block{
+            display: none;
+          }
+    }
+      
+    }
+    }
+   
+    a{
+        color: #fff;
+        text-decoration: none;
+    }
+    .hero{
+        
+       height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        @extend %wrap;
+        padding-left: var.$gutter-base;
+        padding-right: var.$gutter-base;
+
+        
+    }
+    i{
+        position: absolute;
+        bottom: 15px;
+        right: 20px;
+        background-color: var.$text-color-secondary;
+        color: var.$text-color-primary;
+        padding: math.div(var.$gutter-base,3);
+    }
+
+}

@@ -1,0 +1,51 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.about-me-section{
+  background-color: var.$background-color-primary;
+.wrap {
+  @extend %wrap;
+  @extend %section;
+  
+
+  .about-container {
+    @extend %flex;
+    gap: var.$gutter-base;
+    background-color: var.$background-color-primary;
+    .about-img {
+      border: 6px solid var.$border-color-primary;
+      border-radius: math.div(var.$gutter-base,6);
+      img {
+        height: 100%;
+      }
+    }
+    
+  }
+
+  .about-text{
+    p{
+      padding-bottom: math.div(var.$gutter-base,2);
+    }
+  }
+    
+    
+  
+
+  .socials {
+   display: flex;
+    .circle-socials {
+      width: var.$gutter-base * 1.5;
+      height: var.$gutter-base * 1.5;
+      border: 1px solid var.$text-color-base;
+      border-radius: 50%;
+      @extend %flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: math.div(var.$gutter-base,2);
+
+      
+    }
+  }
+}
+}
