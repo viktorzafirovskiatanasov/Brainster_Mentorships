@@ -1,0 +1,59 @@
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+img{
+  width: 100%;
+}
+.logo{
+  width: 200px;
+}
+.bg-black{
+  background: #000;
+}
+.box{
+  width: 80%;
+}
+.carousel-indicators{
+  top: 0 !important;
+  bottom: auto !important;
+}
+.carousel-indicators li{
+  background-color: #000 !important;
+}
+.icon a{
+  width: max-content !important;
+height: 24px !important;
+}
+
+
+footer{
+  background-image: linear-gradient(rgba(255, 255, 255, 0.699), rgba(255, 255, 255, 0.699)),url("../img/bg-faq.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.footer{
+  background-color: rgba(247,247,247,255);
+  border-top: 1px solid rgba(128, 128, 128, 0.466); 
+}
+@media (max-width:768px) {
+  .promo-text{
+    width: 80% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .font{
+    font-size: 13px;
+  }
+}
+@media (max-width:424px) {
+  .logo{
+    width: 140px;
+  }
+}
+@media (min-width:769px) {
+.icon{
+  order: 1;
+}
+}
