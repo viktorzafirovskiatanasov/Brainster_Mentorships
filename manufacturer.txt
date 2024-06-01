@@ -1,0 +1,10 @@
+Toyota:corolla,aygo
+Kia:ceed,i35
+Honda:civic,accord
+Ford:focus,fiesta
+Chevrolet:cruze,malibu
+Nissan:altima,maxima
+Hyundai:elantra,sonata
+Volkswagen:jetta,golf
+BMW:3-series,5-series
+Mercedes-Benz:c-class,e-class
