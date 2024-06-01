@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lyrics Finder</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main
+      class="d-flex align-items-center justify-content-center"
+      style="min-height: 50vh"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-6 offset-md-3">
+            <h1 class="text-center">Lyrics Finder</h1>
+            <form class="my-5" action="">
+              <div class="mb-3">
+                <label for="title" class="form-label">Song Title:</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="artist" class="form-label">Artist:</label>
+                <input
+                  type="text"
+                  id="artist"
+                  name="artist"
+                  class="form-control"
+                />
+              </div>
+              <button id="search" class="btn btn-primary">Search</button>
+            </form>
+            <div class="text-center">
+              <h1>Lyrics:</h1>
+              <div id="printResult"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
