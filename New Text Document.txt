@@ -1,0 +1,124 @@
+1.
+SELECT a.id AS academy_name, COUNT(s.id) 
+FROM student s
+JOIN academy a ON s.academy_id = a.id
+GROUP BY a.id;
+
+2.
+SELECT COUNT(ac.instructor_id) No_of_instructors
+FROM academy_instructor ac
+WHERE ac.instructor_id = 1;
+
+3.
+SELECT s.firstname, COUNT(s.id)
+FROM student s
+GROUP BY s.firstname
+HAVING COUNT(*) > 1;
+
+4.
+SELECT *
+FROM student s
+WHERE email LIKE '%brainster.com' AND s.gender = 'Male';
+
+5.
+SELECT *
+FROM instructor
+WHERE years_of_experience < 5 AND YEAR(joined_at) = 2019;
+
+6.
+SELECT s.gender, COUNT(*) AS no_of_students
+FROM student s
+GROUP BY s.gender;
+
+7.
+SELECT *
+FROM lecture l
+WHERE l.datetime BETWEEN '2019-11-1' AND '2019-11-30';
+
+8.
+SELECT s.*
+FROM mentor_session_student mss
+JOIN mentor_session ms ON ms.id = mss.mentor_session_id
+JOIN instructor i ON i.id = ms.instructor_id
+JOIN academy_instructor ac ON ac.instructor_id = i.id
+JOIN academy a ON a.id = ac.academy_id
+JOIN student s ON mss.student_id = s.id
+WHERE a.id = 5;
+
+9.
+SELECT COUNT(*) AS no_of_students 
+FROM student s 
+WHERE s.gender = 'Female' AND s.academy_id = 3;
+
+10.
+SELECT COUNT(*) 
+FROM mentor_session ms
+JOIN instructor i ON i.id = ms.instructor_id
+WHERE ms.topic = 'Php' AND i.id = 7;
+
+11.
+SELECT COUNT(*) AS count
+FROM (
+    SELECT COUNT(*) AS name_count
+    FROM student s
+    WHERE gender = 'Female'
+    GROUP BY s.firstname
+    HAVING COUNT(*) = 1
+) AS unique_females;
+
+12.
+SELECT *
+FROM academy a
+WHERE MONTH(a.start) = 4 AND YEAR(a.start) = 2019;
+
+13.
+SELECT *
+FROM student s
+WHERE s.lastname LIKE '____ing'
+
+14.
+SELECT CONCAT(s.firstname, s.lastname, ' A', s.academy_id) AS names
+FROM student s
+ORDER BY s.lastname DESC
+LIMIT 5;
+
+15.
+16.
+
+17.
+SELECT ls.lecture_id , COUNT(ls.student_id) AS prisutni_studenti
+FROM lecture_student ls
+GROUP BY ls.lecture_id
+HAVING COUNT(ls.student_id) = (
+    SELECT MIN(prisutni_studenti)
+    FROM (
+        SELECT COUNT(ls.student_id) AS prisutni_studenti
+        FROM lecture_student ls
+
+        GROUP BY ls.lecture_id
+    ) AS subquery
+);
+
+18.
+SELECT a.id, COUNT(ai.instructor_id) AS total_instructors
+FROM academy a
+JOIN academy_instructor ai ON a.id = ai.academy_id
+GROUP BY a.id
+HAVING COUNT(ai.instructor_id) > (SELECT COUNT(DISTINCT ai.instructor_id) / 2 AS total_instructors FROM academy_instructor ai);
+
+19. Bonus
+SELECT l.topic, ls.created_at, COUNT(s.id) AS total_students
+FROM lecture l
+JOIN lecture_student ls ON l.id = ls.lecture_id
+JOIN student s ON ls.student_id = s.id
+GROUP BY l.id
+HAVING COUNT(s.id) = (
+  SELECT MAX(student_count)
+  FROM (
+    SELECT COUNT(s.id) AS student_count
+    FROM lecture l
+    JOIN lecture_student ls ON l.id = ls.lecture_id
+    JOIN student s ON ls.student_id = s.id
+    GROUP BY l.id
+  ) AS counts
+);
